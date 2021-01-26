@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>main.c</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim8.1_v1">
+<meta name="syntax" content="c">
+<meta name="settings" content="number_lines,use_css,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="dracula">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #dadada; background-color: #303030; }
+body { font-family: monospace; color: #dadada; background-color: #303030; }
+* { font-size: 1em; }
+.DraculaPink { color: #ff87d7; }
+.DraculaYellow { color: #ffff87; }
+.LineNr { color: #5f5faf; }
+.DraculaComment { color: #5f5faf; }
+.DraculaPurple { color: #af87ff; }
+.DraculaCyanItalic { color: #87d7ff; font-style: italic; }
+.DraculaGreen { color: #5fff87; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  var lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="DraculaPink">#include </span><span class="DraculaYellow">&lt;stdio.h&gt;</span>
+<span id="L2" class="LineNr"> 2 </span>
+<span id="L3" class="LineNr"> 3 </span><span class="DraculaPink">struct</span> Person {
+<span id="L4" class="LineNr"> 4 </span>    <span class="DraculaCyanItalic">char</span> firstName[<span class="DraculaPurple">10</span>];
+<span id="L5" class="LineNr"> 5 </span>    <span class="DraculaCyanItalic">char</span> lastName[<span class="DraculaPurple">10</span>];
+<span id="L6" class="LineNr"> 6 </span>    <span class="DraculaCyanItalic">int</span> age;
+<span id="L7" class="LineNr"> 7 </span>    <span class="DraculaCyanItalic">char</span> hobbies[<span class="DraculaPurple">5</span>][<span class="DraculaPurple">20</span>];
+<span id="L8" class="LineNr"> 8 </span>    <span class="DraculaCyanItalic">char</span> langs[<span class="DraculaPurple">4</span>][<span class="DraculaPurple">10</span>];
+<span id="L9" class="LineNr"> 9 </span>    <span class="DraculaCyanItalic">char</span> progLangs[<span class="DraculaPurple">4</span>][<span class="DraculaPurple">10</span>];
+<span id="L10" class="LineNr">10 </span>    <span class="DraculaCyanItalic">char</span> preferredOS[<span class="DraculaPurple">15</span>];
+<span id="L11" class="LineNr">11 </span>    <span class="DraculaCyanItalic">char</span> contactInfo[<span class="DraculaPurple">50</span>];
+<span id="L12" class="LineNr">12 </span>};
+<span id="L13" class="LineNr">13 </span>
+<span id="L14" class="LineNr">14 </span><span class="DraculaCyanItalic">int</span> <span class="DraculaGreen">main</span>() {
+<span id="L15" class="LineNr">15 </span>    <span class="DraculaPink">struct</span> Person person = {
+<span id="L16" class="LineNr">16 </span>        <span class="DraculaYellow">&quot;Enes&quot;</span>,
+<span id="L17" class="LineNr">17 </span>        <span class="DraculaYellow">&quot;Yilmaz&quot;</span>,
+<span id="L18" class="LineNr">18 </span>        <span class="DraculaPurple">23</span>,
+<span id="L19" class="LineNr">19 </span>        {<span class="DraculaYellow">&quot;reading books&quot;</span>, <span class="DraculaYellow">&quot;listening to music&quot;</span>, <span class="DraculaYellow">&quot;watching shows&quot;</span>, <span class="DraculaYellow">&quot;programming&quot;</span>,
+<span id="L20" class="LineNr">20 </span>         <span class="DraculaYellow">&quot;hacking&quot;</span>},
+<span id="L21" class="LineNr">21 </span>        {<span class="DraculaYellow">&quot;Turkish&quot;</span>, <span class="DraculaYellow">&quot;English&quot;</span>, <span class="DraculaYellow">&quot;German&quot;</span>, <span class="DraculaYellow">&quot;Spanish&quot;</span>},
+<span id="L22" class="LineNr">22 </span>        {<span class="DraculaYellow">&quot;C/C++&quot;</span>, <span class="DraculaYellow">&quot;C#&quot;</span>, <span class="DraculaYellow">&quot;Python&quot;</span>, <span class="DraculaYellow">&quot;Shell&quot;</span>},
+<span id="L23" class="LineNr">23 </span>        <span class="DraculaYellow">&quot;Arch Linux&quot;</span>,
+<span id="L24" class="LineNr">24 </span>        <span class="DraculaYellow">&quot;https://www.linkedin.com/in/enes-yilmaz-3a1a46197&quot;</span>,
+<span id="L25" class="LineNr">25 </span>    };
+<span id="L26" class="LineNr">26 </span>
+<span id="L27" class="LineNr">27 </span>    <span class="DraculaGreen">printf</span>(<span class="DraculaYellow">&quot;Hi! My name is </span><span class="DraculaPink">%s</span><span class="DraculaYellow"> </span><span class="DraculaPink">%s</span><span class="DraculaYellow"> and I am </span><span class="DraculaPink">%i</span><span class="DraculaYellow"> years old.</span><span class="DraculaPink">\n</span><span class="DraculaYellow">&quot;</span>, person.firstName,
+<span id="L28" class="LineNr">28 </span>           person.lastName, person.age);
+<span id="L29" class="LineNr">29 </span>    <span class="DraculaGreen">printf</span>(<span class="DraculaYellow">&quot;I like </span><span class="DraculaPink">%s</span><span class="DraculaYellow">, </span><span class="DraculaPink">%s</span><span class="DraculaYellow">,</span><span class="DraculaPink">\n</span><span class="DraculaPink">%s</span><span class="DraculaYellow">, </span><span class="DraculaPink">%s</span><span class="DraculaYellow"> and </span><span class="DraculaPink">%s</span><span class="DraculaYellow">.</span><span class="DraculaPink">\n</span><span class="DraculaYellow">&quot;</span>, person.hobbies[<span class="DraculaPurple">0</span>],
+<span id="L30" class="LineNr">30 </span>           person.hobbies[<span class="DraculaPurple">1</span>], person.hobbies[<span class="DraculaPurple">2</span>], person.hobbies[<span class="DraculaPurple">3</span>],
+<span id="L31" class="LineNr">31 </span>           person.hobbies[<span class="DraculaPurple">4</span>]);
+<span id="L32" class="LineNr">32 </span>    <span class="DraculaGreen">printf</span>(<span class="DraculaYellow">&quot;I speak </span><span class="DraculaPink">%s</span><span class="DraculaYellow">, </span><span class="DraculaPink">%s</span><span class="DraculaYellow">, </span><span class="DraculaPink">%s</span><span class="DraculaYellow"> and </span><span class="DraculaPink">%s</span><span class="DraculaYellow">.</span><span class="DraculaPink">\n</span><span class="DraculaYellow">&quot;</span>, person.langs[<span class="DraculaPurple">0</span>], person.langs[<span class="DraculaPurple">1</span>],
+<span id="L33" class="LineNr">33 </span>           person.langs[<span class="DraculaPurple">2</span>], person.langs[<span class="DraculaPurple">3</span>]);
+<span id="L34" class="LineNr">34 </span>    <span class="DraculaGreen">printf</span>(<span class="DraculaYellow">&quot;I can write code in </span><span class="DraculaPink">%s</span><span class="DraculaYellow">, </span><span class="DraculaPink">%s</span><span class="DraculaYellow">, </span><span class="DraculaPink">%s</span><span class="DraculaYellow"> and </span><span class="DraculaPink">%s</span><span class="DraculaYellow">.</span><span class="DraculaPink">\n</span><span class="DraculaYellow">&quot;</span>, person.progLangs[<span class="DraculaPurple">0</span>],
+<span id="L35" class="LineNr">35 </span>           person.progLangs[<span class="DraculaPurple">1</span>], person.progLangs[<span class="DraculaPurple">2</span>], person.progLangs[<span class="DraculaPurple">3</span>]);
+<span id="L36" class="LineNr">36 </span>    <span class="DraculaGreen">printf</span>(<span class="DraculaYellow">&quot;BTW I use </span><span class="DraculaPink">%s</span><span class="DraculaYellow">!</span><span class="DraculaPink">\n</span><span class="DraculaYellow">&quot;</span>, person.preferredOS);
+<span id="L37" class="LineNr">37 </span>    <span class="DraculaGreen">printf</span>(<span class="DraculaYellow">&quot;You can reach me at:</span><span class="DraculaPink">\n</span><span class="DraculaPink">%s</span><span class="DraculaPink">\n</span><span class="DraculaYellow">&quot;</span>, person.contactInfo);
+<span id="L38" class="LineNr">38 </span>
+<span id="L39" class="LineNr">39 </span>    <span class="DraculaComment">/*</span>
+<span id="L40" class="LineNr">40 </span><span class="DraculaComment">     *Hi! My name is Enes Yilmaz and I am 23 years old.</span>
+<span id="L41" class="LineNr">41 </span><span class="DraculaComment">     *I like reading books, listening to music,</span>
+<span id="L42" class="LineNr">42 </span><span class="DraculaComment">     *watching shows, programming and hacking.</span>
+<span id="L43" class="LineNr">43 </span><span class="DraculaComment">     *I speak Turkish, English, German and Spanish.</span>
+<span id="L44" class="LineNr">44 </span><span class="DraculaComment">     *I can write code in C/C++, C#, Python and Shell.</span>
+<span id="L45" class="LineNr">45 </span><span class="DraculaComment">     *BTW I use Arch Linux!</span>
+<span id="L46" class="LineNr">46 </span><span class="DraculaComment">     *You can reach me at:</span>
+<span id="L47" class="LineNr">47 </span><span class="DraculaComment">     *<a href="https://www.linkedin.com/in/enes-yilmaz-3a1a46197">https://www.linkedin.com/in/enes-yilmaz-3a1a46197</a></span>
+<span id="L48" class="LineNr">48 </span><span class="DraculaComment">     </span><span class="DraculaComment">*/</span>
+<span id="L49" class="LineNr">49 </span>
+<span id="L50" class="LineNr">50 </span>    <span class="DraculaPink">return</span> <span class="DraculaPurple">0</span>;
+<span id="L51" class="LineNr">51 </span>}
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
